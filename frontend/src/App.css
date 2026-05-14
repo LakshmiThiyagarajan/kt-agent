@@ -1,11 +1,12 @@
-body {
+html, body, #root {
+  height: 100%;
   margin: 0;
   font-family: "Segoe UI";
 }
 
 .app {
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 
 /* SIDEBAR */

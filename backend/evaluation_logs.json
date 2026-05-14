@@ -1,0 +1,206 @@
+[
+  {
+    "timestamp": "2026-05-14 12:01:23.480003",
+    "question": "hi",
+    "answer": "Hello! How can I assist you today?",
+    "context": "Painting Chat \nProject Name: Painting Chat \u2013 Talk to the Characters in a Painting\nThis project is an experimental AI application where users can chat with the characters inside a painting as if they are real people.\nCurrently, the system uses the painting The Stolen Interview by Raja Ravi Varma. Users can choose to chat either with the woman or the man shown in the painting. The responses are generated as if the characters are thinking, feeling, and speaking from inside the scene.\nThis is basically a chatbot, but instead of talking to a generic bot, the user talks to a character from an artwork. The idea is that this can be used in art galleries or museums to make paintings interactive, especially for people who don\u2019t usually spend much time understanding art.\nRight now:\nOnly one painting is supported\nOnly text chat is enabled\nRuns as an API (no proper web app yet)\nSimple UI is in Colab for testing\nFuture plan is to add more paintings from Raja Ravi Varma and enable voice input/output.\n\n\n plant.\n\nNeed input validation before prediction.\n\nSystem is sensitive to how image is captured.\n\n\n\nImportant email queries\n\nWhy did we go with CNN for this? Someone asked if we can use newer models like transformers.\n\n-> CNN was easier and dataset was small. Transformers need more data and compute.\n\nAlso image size why 128? quality loss?\n\n-> Tried 224 earlier but training very slow on local system. Not much accuracy difference so kept 128.\n\nAccuracy is around 92% but sometimes wrong prediction happening for two plants.\n\n-> Leaves look very similar. Dataset limitation.\n\nMemory error came during training before, batch size reduced to 32 after that.\n\nIs this ready for deployment?\n\n-> Can run locally now. Need API layer if deploying for users.\n\nHow much time training takes if retrained?\n\n-> Around 30-40 mins depending on system.\n\nDataset quality is not perfect, some images from phone camera.\n\nCan we add more plants later?\n\n-> Yes but need more images and retraining.\n\nManager asked if t",
+    "scores": {
+      "relevance": 1,
+      "faithfulness": 5,
+      "completeness": 1,
+      "overall": 2
+    }
+  },
+  {
+    "timestamp": "2026-05-14 12:01:58.083230",
+    "question": "tell me about milk invoice generator project",
+    "answer": "The Milk Invoice Generation System is an internal application developed to automate the preparation of monthly milk invoices for customers. The system replaces the current manual billing process by reading daily milk purchase records from Excel and generating accurate customer-wise PDF invoices. This project is currently used by the operations team to simplify billing, reduce manual effort, and eliminate calculation errors.\n\nThe existing billing process involves manual entry of daily milk records, manual calculation of total litres and total amount, and manual preparation of invoices for each customer. This process is time-consuming, error-prone, and difficult to manage as the number of customers increases.\n\nThe proposed solution automates the following tasks:\n- Reading daily records from Excel\n- Calculating totals for each customer\n- Generating structured PDF invoices\n\nThe primary users of this system are the Operations Team and the Billing/Management Team. \n\nThe benefits of the Milk Invoice Generation System include:\n- Saving time in invoice preparation\n- Reducing manual calculation mistakes\n- Providing a standardized invoice format for all customers\n- Enabling easy monthly report generation.",
+    "context": "Project Title\nMilk Invoice Generation System\nIntroduction\nThe Milk Invoice Generation System is an internal application developed to automate the preparation of monthly milk invoices for customers. The system replaces the current manual billing process by reading daily milk purchase records from Excel and generating accurate customer-wise PDF invoices.\nThis project is currently used by the operations team to simplify billing, reduce manual effort, and eliminate calculation errors.\nBusiness Problem\nThe existing billing process involves:\nManual entry of daily milk records\nManual calculation of total litres and total amount\nManual preparation of invoices for each customer\nThis process is time-consuming, error-prone, and difficult to manage as the number of customers increases.\nProposed Solution\nThe system automates:\nReading daily records from Excel\nCalculating totals for each customer\nGenerating structured PDF invoices\nUsers\nOperations Team\nBilling/Management Team\nBenefits\nSaves time in invoice preparation\nReduces manual calculation mistakes\nStandardized invoice format for all customers\nEasy monthly report generation\n\nPainting Chat \nProject Name: Painting Chat \u2013 Talk to the Characters in a Painting\nThis project is an experimental AI application where users can chat with the characters inside a painting as if they are real people.\nCurrently, the system uses the painting The Stolen Interview by Raja Ravi Varma. Users can choose to chat either with the woman or the man shown in the painting. The responses are generated as if the characters are thinking, feeling, and speaking from inside the scene.\nThis is basically a chatbot, but instead of talking to a generic bot, the user talks to a character from an artwork. The idea is that this can be used in art galleries or museums to make paintings interactive, especially for people who don\u2019t usually spend much time understanding art.\nRight now:\nOnly one painting is supported\nOnly text chat is enabled\nRuns as an API (no proper we",
+    "scores": {
+      "relevance": 5,
+      "faithfulness": 5,
+      "completeness": 5,
+      "overall": 5
+    }
+  },
+  {
+    "timestamp": "2026-05-14 12:03:41.098424",
+    "question": "simple excel can do the  same work as milk invoice generator . so why we use milk invoice generator like  what is the purpose?",
+    "answer": "The purpose of the Milk Invoice Generation System is to automate the preparation of monthly milk invoices for customers, replacing the current manual billing process. While simple Excel can perform similar tasks, the system offers several advantages:\n\n1. **Automated Process**: It reads daily milk purchase records from Excel, eliminating the need for manual entry and reducing time spent on billing.\n2. **Accurate Calculations**: It automatically calculates total liters and total amounts for each customer, reducing the risk of manual calculation errors.\n3. **Structured Invoices**: The system generates structured PDF invoices, providing a standardized format for all customers.\n4. **Efficiency**: It simplifies billing, reduces manual effort, and makes it easier to manage billing as the number of customers increases.\n\nIn essence, the Milk Invoice Generation System enhances efficiency and accuracy compared to manual methods, which is crucial for handling billing in an organized manner.",
+    "context": "Project Title\nMilk Invoice Generation System\nIntroduction\nThe Milk Invoice Generation System is an internal application developed to automate the preparation of monthly milk invoices for customers. The system replaces the current manual billing process by reading daily milk purchase records from Excel and generating accurate customer-wise PDF invoices.\nThis project is currently used by the operations team to simplify billing, reduce manual effort, and eliminate calculation errors.\nBusiness Problem\nThe existing billing process involves:\nManual entry of daily milk records\nManual calculation of total litres and total amount\nManual preparation of invoices for each customer\nThis process is time-consuming, error-prone, and difficult to manage as the number of customers increases.\nProposed Solution\nThe system automates:\nReading daily records from Excel\nCalculating totals for each customer\nGenerating structured PDF invoices\nUsers\nOperations Team\nBilling/Management Team\nBenefits\nSaves time in invoice preparation\nReduces manual calculation mistakes\nStandardized invoice format for all customers\nEasy monthly report generation\n\nImportant email queries\n\nWhy did we go with CNN for this? Someone asked if we can use newer models like transformers.\n\n-> CNN was easier and dataset was small. Transformers need more data and compute.\n\nAlso image size why 128? quality loss?\n\n-> Tried 224 earlier but training very slow on local system. Not much accuracy difference so kept 128.\n\nAccuracy is around 92% but sometimes wrong prediction happening for two plants.\n\n-> Leaves look very similar. Dataset limitation.\n\nMemory error came during training before, batch size reduced to 32 after that.\n\nIs this ready for deployment?\n\n-> Can run locally now. Need API layer if deploying for users.\n\nHow much time training takes if retrained?\n\n-> Around 30-40 mins depending on system.\n\nDataset quality is not perfect, some images from phone camera.\n\nCan we add more plants later?\n\n-> Yes but need more images and r",
+    "scores": {
+      "relevance": 5,
+      "faithfulness": 5,
+      "completeness": 5,
+      "overall": 5
+    }
+  },
+  {
+    "timestamp": "2026-05-14 12:04:09.947428",
+    "question": "what is python?",
+    "answer": "I am here to help only with KT and project-related questions.",
+    "context": "Painting Chat \nProject Name: Painting Chat \u2013 Talk to the Characters in a Painting\nThis project is an experimental AI application where users can chat with the characters inside a painting as if they are real people.\nCurrently, the system uses the painting The Stolen Interview by Raja Ravi Varma. Users can choose to chat either with the woman or the man shown in the painting. The responses are generated as if the characters are thinking, feeling, and speaking from inside the scene.\nThis is basically a chatbot, but instead of talking to a generic bot, the user talks to a character from an artwork. The idea is that this can be used in art galleries or museums to make paintings interactive, especially for people who don\u2019t usually spend much time understanding art.\nRight now:\nOnly one painting is supported\nOnly text chat is enabled\nRuns as an API (no proper web app yet)\nSimple UI is in Colab for testing\nFuture plan is to add more paintings from Raja Ravi Varma and enable voice input/output.\n\n\nProject Title\nMilk Invoice Generation System\nIntroduction\nThe Milk Invoice Generation System is an internal application developed to automate the preparation of monthly milk invoices for customers. The system replaces the current manual billing process by reading daily milk purchase records from Excel and generating accurate customer-wise PDF invoices.\nThis project is currently used by the operations team to simplify billing, reduce manual effort, and eliminate calculation errors.\nBusiness Problem\nThe existing billing process involves:\nManual entry of daily milk records\nManual calculation of total litres and total amount\nManual preparation of invoices for each customer\nThis process is time-consuming, error-prone, and difficult to manage as the number of customers increases.\nProposed Solution\nThe system automates:\nReading daily records from Excel\nCalculating totals for each customer\nGenerating structured PDF invoices\nUsers\nOperations Team\nBilling/Management Team\nBenefits\nSaves time i",
+    "scores": {
+      "relevance": 1,
+      "faithfulness": 5,
+      "completeness": 1,
+      "overall": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-14 12:04:55.434170",
+    "question": "who is the CEO of OpenAI?",
+    "answer": "I am here to help only with KT and project-related questions.",
+    "context": "Important email queries\n\nWhy did we go with CNN for this? Someone asked if we can use newer models like transformers.\n\n-> CNN was easier and dataset was small. Transformers need more data and compute.\n\nAlso image size why 128? quality loss?\n\n-> Tried 224 earlier but training very slow on local system. Not much accuracy difference so kept 128.\n\nAccuracy is around 92% but sometimes wrong prediction happening for two plants.\n\n-> Leaves look very similar. Dataset limitation.\n\nMemory error came during training before, batch size reduced to 32 after that.\n\nIs this ready for deployment?\n\n-> Can run locally now. Need API layer if deploying for users.\n\nHow much time training takes if retrained?\n\n-> Around 30-40 mins depending on system.\n\nDataset quality is not perfect, some images from phone camera.\n\nCan we add more plants later?\n\n-> Yes but need more images and retraining.\n\nManager asked if this can run on cloud.\n\n-> Possible but not tried yet. Need GPU VM maybe.\n\nAfter demo, one issue found: yellow leaves getting misclassified.\n\nMight need better dataset or preprocessing.\n\n\nPost deployment Issues:\n\nAfter showing demo to few users, noticed model fails when background is soil or multiple leaves present.\n\nSome users tried very zoomed out images, prediction wrong.\n\nLighting plays big role, low light images not working well.\n\nIf leaf is partially damaged or eaten by insects, model confused.\n\nAlso people tried uploading non-leaf images just to test, model still predicts some\n\nPainting Chat \nProject Name: Painting Chat \u2013 Talk to the Characters in a Painting\nThis project is an experimental AI application where users can chat with the characters inside a painting as if they are real people.\nCurrently, the system uses the painting The Stolen Interview by Raja Ravi Varma. Users can choose to chat either with the woman or the man shown in the painting. The responses are generated as if the characters are thinking, feeling, and speaking from inside the scene.\nThis is basically a chatbo",
+    "scores": {
+      "relevance": 1,
+      "faithfulness": 5,
+      "completeness": 1,
+      "overall": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-14 12:21:13.725296",
+    "question": "hi",
+    "answer": "Hello! How can I assist you today?",
+    "context": "",
+    "scores": {
+      "relevance": 1,
+      "faithfulness": 5,
+      "completeness": 1,
+      "overall": 3
+    }
+  },
+  {
+    "timestamp": "2026-05-14 12:21:34.049403",
+    "question": "who are you?",
+    "answer": "I am here to help only with KT and project-related questions.",
+    "context": "",
+    "scores": {
+      "relevance": 2,
+      "faithfulness": 5,
+      "completeness": 2,
+      "overall": 3
+    }
+  },
+  {
+    "timestamp": "2026-05-14 12:22:04.151482",
+    "question": "what is the deployment flow of the pinting chat?",
+    "answer": "This information is not available in the project documents.",
+    "context": "Painting Chat \nProject Name: Painting Chat \u2013 Talk to the Characters in a Painting\nThis project is an experimental AI application where users can chat with the characters inside a painting as if they are real people.\nCurrently, the system uses the painting The Stolen Interview by Raja Ravi Varma. Users can choose to chat either with the woman or the man shown in the painting. The responses are generated as if the characters are thinking, feeling, and speaking from inside the scene.\nThis is basically a chatbot, but instead of talking to a generic bot, the user talks to a character from an artwork. The idea is that this can be used in art galleries or museums to make paintings interactive, especially for people who don\u2019t usually spend much time understanding art.\nRight now:\nOnly one painting is supported\nOnly text chat is enabled\nRuns as an API (no proper web app yet)\nSimple UI is in Colab for testing\nFuture plan is to add more paintings from Raja Ravi Varma and enable voice input/output.\n\n\nImportant email queries\n\nWhy did we go with CNN for this? Someone asked if we can use newer models like transformers.\n\n-> CNN was easier and dataset was small. Transformers need more data and compute.\n\nAlso image size why 128? quality loss?\n\n-> Tried 224 earlier but training very slow on local system. Not much accuracy difference so kept 128.\n\nAccuracy is around 92% but sometimes wrong prediction happening for two plants.\n\n-> Leaves look very similar. Dataset limitation.\n\nMemory error came during training before, batch size reduced to 32 after that.\n\nIs this ready for deployment?\n\n-> Can run locally now. Need API layer if deploying for users.\n\nHow much time training takes if retrained?\n\n-> Around 30-40 mins depending on system.\n\nDataset quality is not perfect, some images from phone camera.\n\nCan we add more plants later?\n\n-> Yes but need more images and retraining.\n\nManager asked if this can run on cloud.\n\n-> Possible but not tried yet. Need GPU VM maybe.\n\nAfter demo, one issue foun",
+    "scores": {
+      "relevance": 1,
+      "faithfulness": 5,
+      "completeness": 1,
+      "overall": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-14 12:22:32.825462",
+    "question": "what is python?",
+    "answer": "I am here to help only with KT and project-related questions.",
+    "context": "",
+    "scores": {
+      "relevance": 1,
+      "faithfulness": 5,
+      "completeness": 1,
+      "overall": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-14 12:22:43.985734",
+    "question": "thanks",
+    "answer": "You're welcome! How can I assist you today?",
+    "context": "",
+    "scores": {
+      "relevance": 1,
+      "faithfulness": 5,
+      "completeness": 1,
+      "overall": 2
+    }
+  },
+  {
+    "timestamp": "2026-05-14 18:47:57.419792",
+    "question": "hi",
+    "answer": "Hello! How can I assist you today?",
+    "context": "",
+    "scores": {
+      "relevance": 1,
+      "faithfulness": 5,
+      "completeness": 1,
+      "overall": 3
+    }
+  },
+  {
+    "timestamp": "2026-05-14 18:48:24.244962",
+    "question": "what can you help me with?",
+    "answer": "I am here to help only with KT and project-related questions.",
+    "context": "",
+    "scores": {
+      "relevance": 5,
+      "faithfulness": 5,
+      "completeness": 3,
+      "overall": 4
+    }
+  },
+  {
+    "timestamp": "2026-05-14 18:49:00.120603",
+    "question": "okay what is the paint chat?",
+    "answer": "I am here to help only with KT and project-related questions.",
+    "context": "",
+    "scores": {
+      "relevance": 1,
+      "faithfulness": 5,
+      "completeness": 1,
+      "overall": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-14 18:49:36.948785",
+    "question": "what is painting chat?",
+    "answer": "This information is not available in the project documents.",
+    "context": "",
+    "scores": {
+      "relevance": 1,
+      "faithfulness": 1,
+      "completeness": 1,
+      "overall": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-14 18:49:57.916536",
+    "question": "tell me about painting chat project?",
+    "answer": "This information is not available in the project documents.",
+    "context": "",
+    "scores": {
+      "relevance": 1,
+      "faithfulness": 5,
+      "completeness": 1,
+      "overall": 2
+    }
+  },
+  {
+    "timestamp": "2026-05-14 18:50:18.120567",
+    "question": "what is the milk invoice generator?",
+    "answer": "This information is not available in the project documents.",
+    "context": "",
+    "scores": {
+      "relevance": 1,
+      "faithfulness": 5,
+      "completeness": 1,
+      "overall": 1
+    }
+  },
+  {
+    "timestamp": "2026-05-14 19:21:55.632308",
+    "question": "tell me about painting chat",
+    "answer": "Painting Chat is an experimental AI application that allows users to chat with the characters inside a painting as if they were real people. It currently features the painting \"The Stolen Interview\" by Raja Ravi Varma, where users can choose to engage in conversation with either the woman or the man depicted in the artwork. The responses are crafted to simulate the characters' thoughts, feelings, and speech as if they were experiencing the scene directly.\n\nThe application is designed to create an interactive experience in art galleries or museums, particularly for individuals who may not typically take the time to understand art. Currently, it supports only one painting, enables text chat, and operates as an API, with a simple user interface for testing in Google Colab. Future plans include adding more paintings by Raja Ravi Varma and incorporating voice input/output capabilities.",
+    "context": "Painting Chat \nProject Name: Painting Chat \u2013 Talk to the Characters in a Painting\nThis project is an experimental AI application where users can chat with the characters inside a painting as if they are real people.\nCurrently, the system uses the painting The Stolen Interview by Raja Ravi Varma. Users can choose to chat either with the woman or the man shown in the painting. The responses are generated as if the characters are thinking, feeling, and speaking from inside the scene.\nThis is basically a chatbot, but instead of talking to a generic bot, the user talks to a character from an artwork. The idea is that this can be used in art galleries or museums to make paintings interactive, especially for people who don\u2019t usually spend much time understanding art.\nRight now:\nOnly one painting is supported\nOnly text chat is enabled\nRuns as an API (no proper web app yet)\nSimple UI is in Colab for testing\nFuture plan is to add more paintings from Raja Ravi Varma and enable voice input/output.\n\n\nImportant email queries\n\nWhy did we go with CNN for this? Someone asked if we can use newer models like transformers.\n\n-> CNN was easier and dataset was small. Transformers need more data and compute.\n\nAlso image size why 128? quality loss?\n\n-> Tried 224 earlier but training very slow on local system. Not much accuracy difference so kept 128.\n\nAccuracy is around 92% but sometimes wrong prediction happening for two plants.\n\n-> Leaves look very similar. Dataset limitation.\n\nMemory error came during training before, batch size reduced to 32 after that.\n\nIs this ready for deployment?\n\n-> Can run locally now. Need API layer if deploying for users.\n\nHow much time training takes if retrained?\n\n-> Around 30-40 mins depending on system.\n\nDataset quality is not perfect, some images from phone camera.\n\nCan we add more plants later?\n\n-> Yes but need more images and retraining.\n\nManager asked if this can run on cloud.\n\n-> Possible but not tried yet. Need GPU VM maybe.\n\nAfter demo, one issue foun",
+    "scores": {
+      "relevance": 5,
+      "faithfulness": 5,
+      "completeness": 5,
+      "overall": 5
+    }
+  }
+]

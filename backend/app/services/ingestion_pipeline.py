@@ -81,7 +81,6 @@ def ingest_file(file_path: Path, uploaded_by: str):
             namespace=NAMESPACE
         )
 
-    # ✅ Log upload after successful ingestion
     log_upload(
         file_hash=file_hash,
         file_name=file_path.name,
@@ -89,4 +88,4 @@ def ingest_file(file_path: Path, uploaded_by: str):
         uploaded_by=uploaded_by
     )
 
-    print("✅ Upload completed and logged.")
+    print("Upload completed and logged.")

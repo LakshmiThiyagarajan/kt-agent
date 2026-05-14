@@ -17,7 +17,7 @@ def retrieve_context(query: str, top_k: int = 3) -> str:
     # 1. Convert question to embedding
     query_embedding = get_embedding(query)
 
-    # 2. Query Pinecone with the vector
+    # 2. Search Pinecone
     results = index.query(
         vector=query_embedding,
         top_k=top_k,
@@ -25,14 +25,29 @@ def retrieve_context(query: str, top_k: int = 3) -> str:
         namespace=NAMESPACE,
     )
 
-    # 3. Build context from matches
+    matches = results.get("matches", [])
+
+    # ❗ If nothing matches, it's NOT a project question
+    if not matches:
+        return ""
+
+    # 🔥 IMPORTANT — check similarity score of best match
+    top_score = matches[0]["score"]
+
+    # This number is the MAGIC
+    # You can tune later: 0.40 / 0.45 / 0.50
+    if top_score < 0.45:
+        return ""
+
+    # 3. Build context only if score is good
     context = ""
-    for match in results["matches"]:
+    for match in matches:
         context += match["metadata"]["text"] + "\n\n"
 
     return context
 
 
+# ================= ANSWER GENERATION =================
 def generate_answer(query: str) -> str:
     context = retrieve_context(query)
 
@@ -44,7 +59,7 @@ If the user says hi/hello/hey → greet politely.
 If the user says thanks → reply politely.
 
 STEP 2 — Check the knowledge:
-If the knowledge below is EMPTY or does NOT contain the answer, say:
+If the knowledge below is EMPTY, say:
 "This information is not available in the project documents."
 
 STEP 3 — If knowledge contains the answer:
@@ -61,4 +76,13 @@ Question:
 """
 
     response = llm.invoke(prompt)
-    return response.content.strip()
+    answer = response.content.strip()
+
+    try:
+        from app.core.evaluator import evaluate_answer
+        evaluate_answer(query, context, answer)
+    except Exception as e:
+        print("Evaluation error:", e)
+
+    # Step 5 — Return answer to API → React UI
+    return answer
