@@ -1,9 +1,11 @@
 fastapi
 uvicorn
 python-dotenv
-pinecone
+pinecone-client
+langchain
 langchain-openai
 langchain-text-splitters
+tiktoken
 python-docx
 PyPDF2
 python-pptx
