@@ -1,0 +1,42 @@
+# Python runtime
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment — NEVER commit real keys
+.env
+*.env.local
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+backend/data/
+
+# Tests & coverage (generated artifacts, not source)
+backend/tests/
+backend/pytest.ini
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE & editor config
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Launch scripts (local convenience, not part of the package)
+run.sh
+
+# Logs
+*.log

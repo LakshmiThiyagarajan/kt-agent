@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KT-Agent — Knowledge Transfer System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="toast-container" id="toast-container"></div>
+<div class="app">
+  <nav class="sidebar">
+    <div class="sidebar-logo">KT-Agent<span>Knowledge Transfer System</span></div>
+    <div class="sidebar-nav">
+      <button class="nav-item" id="nav-login"   data-panel="login">Login</button>
+      <button class="nav-item" id="nav-chat"    data-panel="chat">Chat</button>
+      <button class="nav-item" id="nav-upload"  data-panel="upload">Upload Docs</button>
+      <button class="nav-item" id="nav-profile" data-panel="profile">My Profile</button>
+      <button class="nav-item" id="nav-logout"  style="display:none;margin-top:auto;color:var(--red)">Logout</button>
+    </div>
+    <div class="sidebar-profile">
+      <div class="profile-name" id="sidebar-name">Not logged in</div>
+      <div class="profile-role" id="sidebar-role">—</div>
+      <div class="profile-tag" id="sidebar-project">No project selected</div>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <!-- LOGIN -->
+    <div class="panel active" id="panel-login">
+      <div class="panel-inner" style="max-width:400px;margin-top:80px">
+        <div class="panel-title">Sign In</div>
+        <div class="panel-subtitle">Enter your credentials to access KT-Agent</div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="form-group">
+            <label>Username</label>
+            <input id="login-username" class="form-control" placeholder="e.g. alex" autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input id="login-password" class="form-control" type="password" placeholder="••••••••" autocomplete="current-password">
+          </div>
+          <button class="submit-btn" id="login-btn">Sign In</button>
+        </div>
+        <div style="margin-top:20px;padding:14px;background:var(--surface2);border-radius:var(--radius);border:1px solid var(--border);font-size:.82rem;color:var(--text-dim)">
+          <strong style="color:var(--text)">Demo credentials</strong><br>
+          New joiner &nbsp;— <code style="color:var(--accent)">alex</code> / <code style="color:var(--accent)">kt2024</code><br>
+          Senior &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— <code style="color:var(--accent)">sarah</code> / <code style="color:var(--accent)">kt2024</code><br>
+          Demo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— <code style="color:var(--accent)">demo</code> / <code style="color:var(--accent)">kt2024</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFILE SETUP (shown once for new users, replaces modal) -->
+    <div class="panel" id="panel-setup">
+      <div class="panel-inner" style="max-width:480px;margin-top:60px">
+        <div class="panel-title">Welcome — One-time Setup</div>
+        <div class="panel-subtitle">Tell us about yourself so KT-Agent can personalise your experience. You only do this once.</div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="form-group">
+            <label>Your Role <span style="color:var(--red)">*</span></label>
+            <select id="setup-role" class="form-control">
+              <option value="">Select role…</option>
+              <option>Backend Engineer</option>
+              <option>Frontend Engineer</option>
+              <option>QA Engineer</option>
+              <option>DevOps Engineer</option>
+              <option>Business Analyst</option>
+              <option>Project Manager</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Experience Level <span style="color:var(--red)">*</span></label>
+            <select id="setup-experience" class="form-control">
+              <option value="">Select level…</option>
+              <option>New Joiner</option>
+              <option>Transferred Team Member</option>
+              <option>Existing Team Member</option>
+            </select>
+          </div>
+          <button class="submit-btn" id="setup-submit-btn">Save and Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAT -->
+    <div class="panel" id="panel-chat">
+      <div class="chat-header">
+        <h2>Knowledge Assistant</h2>
+        <span class="session-badge" id="session-badge">No active session</span>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="message assistant">
+          <div class="message-bubble">
+            <strong>Welcome to KT-Agent!</strong><br><br>
+            I can help you with:<br>
+            • <strong>Questions</strong> — <em>"How does the authentication flow work?"</em><br>
+            • <strong>Onboarding plans</strong> — <em>"Give me an onboarding plan"</em><br>
+            • <strong>Learning roadmaps</strong> — <em>"What should I learn next?"</em><br>
+            • <strong>Checklists</strong> — <em>"Give me an onboarding checklist"</em><br>
+            • <strong>Summaries</strong> — <em>"Summarise the deployment pipeline"</em>
+          </div>
+        </div>
+        <div class="message assistant" id="project-picker-msg">
+          <div class="message-bubble">
+            Which project are you focusing on today?
+          </div>
+          <div class="project-picker">
+            <button class="project-btn" data-project="Apollo">Apollo</button>
+            <button class="project-btn" data-project="Phoenix">Phoenix</button>
+            <button class="project-btn" data-project="Titan">Titan</button>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <textarea id="chat-input" class="chat-input" placeholder="Ask me anything about your project… (Enter to send)" rows="1"></textarea>
+        <button class="send-btn" id="send-btn">Send</button>
+      </div>
+    </div>
+
+    <!-- UPLOAD -->
+    <div class="panel" id="panel-upload">
+      <div class="panel-inner">
+        <div class="panel-title">Upload Documents</div>
+        <div class="panel-subtitle">Ingest project docs into the knowledge base. Supported: PDF, DOCX, TXT, MD · Images (PNG, JPG, WEBP) · Audio (MP3, WAV, M4A) — max 50 MB</div>
+        <div id="drop-zone" class="drop-zone">
+          <div class="drop-icon">&#8679;</div>
+          <div class="drop-text"><b>Click to browse</b> or drag and drop — select multiple files at once</div>
+        </div>
+        <input type="file" id="fileInput" accept=".pdf,.docx,.txt,.md,.png,.jpg,.jpeg,.webp,.gif,.mp3,.mp4,.m4a,.wav,.webm,.ogg" multiple>
+        <div id="file-list" class="file-list" style="display:none"></div>
+        <div class="upload-form">
+          <div class="form-group">
+            <label>Project Tag</label>
+            <select id="upload-project" class="form-control">
+              <option value="">No filter</option>
+              <option>Apollo</option>
+              <option>Titan</option>
+              <option>Phoenix</option>
+            </select>
+          </div>
+          <button class="submit-btn" id="upload-btn" disabled>Upload All</button>
+        </div>
+        <div id="upload-summary" class="result-card" style="display:none"></div>
+      </div>
+    </div>
+
+    <!-- PROFILE -->
+    <div class="panel" id="panel-profile">
+      <div class="panel-inner">
+        <div class="panel-title">My Profile</div>
+        <div class="panel-subtitle">Update your role and experience level. To change your project focus, use the selector in Chat.</div>
+        <div class="profile-form">
+          <div class="form-group">
+            <label>Role</label>
+            <select id="pf-role" class="form-control">
+              <option>Backend Engineer</option>
+              <option>Frontend Engineer</option>
+              <option>QA Engineer</option>
+              <option>DevOps Engineer</option>
+              <option>Business Analyst</option>
+              <option>Project Manager</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Experience Level</label>
+            <select id="pf-experience" class="form-control">
+              <option>New Joiner</option>
+              <option>Transferred Team Member</option>
+              <option>Existing Team Member</option>
+            </select>
+          </div>
+          <button class="submit-btn" id="save-profile-btn">Save Changes</button>
+        </div>
+        <h3 style="margin:28px 0 12px;font-size:.95rem">Learning Progress</h3>
+        <div class="progress-list" id="progress-list">
+          <p style="color:var(--text-dim);font-size:.85rem">Loading…</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
