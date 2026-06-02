@@ -67,15 +67,13 @@ kt-agent/
 ├── backend/
 │   ├── main.py                  # FastAPI app entry point
 │   ├── requirements.txt
-│   ├── pytest.ini
 │   ├── agents/                  # Multi-agent logic
 │   ├── graph/                   # LangGraph pipeline
 │   ├── routes/                  # API endpoints (auth, chat, ingest, profile)
 │   ├── services/                # OpenAI + Pinecone wrappers
 │   ├── tools/                   # Chunker, PII detector, duplicate detector, parser
 │   ├── memory/                  # SQLite CRUD (conversations, profiles, progress)
-│   ├── core/                    # Config, logger, Pydantic schemas
-│   └── tests/                   # pytest test suite (52 tests)
+│   └── core/                    # Config, logger, Pydantic schemas
 └── frontend/
     ├── index.html
     ├── css/style.css
@@ -143,43 +141,6 @@ Then visit `http://localhost:5500`.
 | `sarah` | `kt2024` | Senior Backend Engineer |
 | `demo` | `kt2024` | Software Engineer |
 
----
-
-## Running Tests
-
-```bash
-cd backend
-pytest -v
-```
-
-The suite uses a temporary SQLite database and stubs all external API calls (OpenAI, Pinecone), so no keys are required to run tests.
-
-```
-52 passed in 0.48s
-```
-
----
-
-## API Reference
-
-Base URL: `http://localhost:8000/api/v1`
-
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/health` | Service health check |
-| `POST` | `/auth/login` | Authenticate with username + password |
-| `POST` | `/profile` | Create user profile |
-| `GET` | `/profile/{employee_id}` | Get user profile |
-| `PATCH` | `/profile/{employee_id}` | Update profile |
-| `GET` | `/profile/{employee_id}/progress` | Get learning progress |
-| `POST` | `/profile/{employee_id}/progress` | Upsert learning progress item |
-| `POST` | `/chat` | Send a message through the agent pipeline |
-| `GET` | `/chat/{session_id}/history` | Get conversation history |
-| `DELETE` | `/chat/{session_id}` | Clear a session |
-| `POST` | `/ingest` | Upload and ingest a document |
-| `GET` | `/ingest/log` | View ingestion audit log |
-
-Interactive docs: `http://localhost:8000/docs`
 
 ---
 
